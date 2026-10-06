@@ -1,8 +1,14 @@
-fun validarBio(bio: String?): Boolean {
-    val tamanho = bio?.length ?: 0
-    return tamanho <= 50
+fun validarBioInfantil(biografia: String?) {
+    val tamanho = biografia?.length ?: 0
+
+    if (tamanho <= 50) {
+        println("Bio aceita")
+    } else {
+        println("Bio muito longa")
+    }
 }
+
 fun main() {
-    println(validarBio("Gosto de tecnologia e jogos."))
-    println(validarBio(null))
+    validarBioInfantil("Gosto de tecnologia e jogos.")
+    validarBioInfantil(null)
 }
