@@ -1,11 +1,23 @@
-fun main() {
-    val emails: List<String?> = listOf("ana@email.com", null, "", "joao@email.com", null)
-    var invalidos = 0
+fun limparEmails(emails: List<String?>) {
+    var contasInvalidas = 0
+
     for (email in emails) {
-        if (email.isNullOrEmpty()) {
-            invalidos++
-            println("Aviso: e-mail nao informado.")
+        val tamanho = email?.length ?: 0
+
+        if (email == null || tamanho == 0) {
+            contasInvalidas++
+            println("Aviso: conta será deletada.")
+        } else {
+            println("Conta válida: $email")
         }
     }
-    println("Total de e-mails invalidos: $invalidos")
+
+    println("Contas que precisam ser apagadas: $contasInvalidas")
+}
+
+fun main() {
+    val emails: List<String?> =
+        listOf("ana@email.com", null, "", "joao@email.com", null)
+
+    limparEmails(emails)
 }
