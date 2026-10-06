@@ -1,8 +1,13 @@
 fun main() {
-    val tratarValor: (Double?) -> Double = { valor ->
-        if (valor == null || valor < 0) 0.0 else valor
+    val calcularGorjeta: (Double?) -> Double = {
+        if (it == null || it < 0) {
+            0.0
+        } else {
+            it
+        }
     }
-    println(tratarValor(25.5))
-    println(tratarValor(-4.0))
-    println(tratarValor(null))
+
+    println(calcularGorjeta(null))
+    println(calcularGorjeta(-5.0))
+    println(calcularGorjeta(10.0))
 }
