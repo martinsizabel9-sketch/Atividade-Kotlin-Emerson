@@ -1,7 +1,16 @@
-fun main() {
-    val entregas: List<String?> = listOf("Entregue", null, "Em rota", null)
-    for ((indice, status) in entregas.withIndex()) {
-        val resultado = status ?: "Status nao informado"
-        println("Entrega ${indice + 1}: $resultado")
+fun auditarEntregas(enderecos: List<String?>) {
+    for (item in enderecos) {
+        val endereco = item ?: "Endereço Desconhecido"
+
+        if (endereco == "Endereço Desconhecido") {
+            println("Entrega Pendente: Falta de dados")
+        } else {
+            println("Rota traçada para: $endereco")
+        }
     }
+}
+
+fun main() {
+    val enderecos = listOf("Rua A", null, "Rua B", null)
+    auditarEntregas(enderecos)
 }
