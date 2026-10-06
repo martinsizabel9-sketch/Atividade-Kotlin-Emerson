@@ -1,7 +1,7 @@
 fun calcularDesconto(valor: Double, cupom: String?): Double {
     return when (cupom) {
-        "PROMO10" -> valor * 0.90
-        "PROMO20" -> valor * 0.80
+        "PROMO10" -> valor - 10
+        "PROMO20" -> valor - 20
         else -> valor
     }
 }
