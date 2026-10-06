@@ -1,13 +1,17 @@
-fun avaliarMotorista(nota: Int?): String {
-    val n = nota ?: return "Sem avaliacao"
-    return when (n) {
-        in 0..4 -> "Ruim"
-        in 5..7 -> "Regular"
-        in 8..10 -> "Otimo"
-        else -> "Nota invalida"
+fun avaliarMotorista(nota: Int?) {
+    val avaliacao = nota ?: 0
+
+    when (avaliacao) {
+        5 -> println("Excelente corrida!")
+        4 -> println("Boa corrida.")
+        1, 2, 3 -> println("Precisamos melhorar.")
+        0 -> println("Nenhuma avaliação fornecida.")
     }
 }
+
 fun main() {
-    println(avaliarMotorista(9))
-    println(avaliarMotorista(null))
+    avaliarMotorista(5)
+    avaliarMotorista(4)
+    avaliarMotorista(2)
+    avaliarMotorista(null)
 }
